@@ -16,20 +16,25 @@ function TaskForm() {
 		setDescription('')
 	};
 	return (
-		<form onSubmit={handleSubmit}>
-			<input
-				placeholder="Escribe tu tarea"
-				onChange={(e) => setTitle(e.target.value)}
-				value={title}
-				autoFocus
-			/>
-			<textarea
-				placeholder="Escribe la description de la tarea"
-				onChange={(e) => setDescription(e.target.value)}
-				value={description}
-			></textarea>
-			<button>guardar</button>
-		</form>
+		<div className='max-w-md mx-auto'>
+			<form onSubmit={handleSubmit} className='bg-slate-800 p-10 mb-4'>
+				<h1 className='text-xl font-bold text-white mb-3 text-center'>Crea tu tarea</h1>
+				<input
+					placeholder="Escribe tu tarea"
+					onChange={(e) => setTitle(e.target.value)}
+					value={title}
+					className='bg-slate-300 p-3 w-full mb-2'
+					autoFocus
+				/>
+				<textarea
+					placeholder="Escribe la description de la tarea"
+					onChange={(e) => setDescription(e.target.value)}
+					className='bg-slate-300 p-3 w-full mb-2'
+					value={description}
+				></textarea>
+				<button className='bg-indigo-500 px-2 py-2 rounded-md text-white capitalize w-full'>guardar</button>
+			</form>
+		</div>
 	);
 }
 
